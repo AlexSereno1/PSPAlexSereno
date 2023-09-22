@@ -23,21 +23,21 @@ void main() {
   }
   if (pid_abuelo == 0 )  //Nos encontramos en Proceso hijo 
   {       
-    pid_nieto=fork();
+    pid_padre=fork();
     
-    if(pid_nieto == -1)
+    if(pid_padre == -1)
     {
     	printf("ERROR !!! No se ha podido crear el proceso hijo...");
     	exit(-1); 
     }
-    if(pid_nieto == 0)
+    if(pid_padre == 0)
     {
     	printf("Soy el proceso nieto y mi id es: %d \n",getpid());
     	printf("Soy el proceso nieto y el id de mi padre es: %d \n",getppid());
     }
     else     
     {
-    	pid_nieto = wait(NULL);
+      wait(NULL);
     	printf("Soy el proceso padre y mi id es: %d \n",getpid());
     	printf("Soy el proceso padre y el id de mi padre es: %d \n",getppid());
     }
@@ -45,7 +45,7 @@ void main() {
   }
   else    
   {
-   pid_padre = wait(NULL);
+   wait(NULL);
    printf("Soy el proceso abuelo y mi id es: %d \n",getpid());
    printf("Soy el proceso abuelo y el id de mi padre es: %d \n",getppid());          
   }
