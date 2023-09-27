@@ -5,7 +5,7 @@
 #include <sys/wait.h>
 
 void main() {
-  pid_t abuelo, padre, nieto;
+  pid_t abuelo, padre;
 
   abuelo= fork();
 
