@@ -18,15 +18,20 @@ void main()
   else
   {
      wait(NULL);
+     
      pid2 = fork(); //Crear proceso hijo P3
+     
      if(pid2 == 0)
      {
-        printf("CCC \n");  
+     	printf("CCC \n"); 
      }
      else
      {
-     	wait(NULL);
-     }
+       wait(NULL);
+       printf("CCC \n"); 
+     } 
+     
+     
   }
   exit(0);
 }
