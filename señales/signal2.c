@@ -4,10 +4,11 @@
 #include <unistd.h>
 #include <sys/wait.h>
 #include <time.h>
-int segundos=0;
+
 
 void suma()
 {
+	int segundos=0;
 	segundos = segundos+5;
 	printf("Han trascurrido %d segundos \n",segundos);
 	alarm(5);
