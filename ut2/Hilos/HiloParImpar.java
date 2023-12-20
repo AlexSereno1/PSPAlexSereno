@@ -1,9 +1,3 @@
-package Ejercicios;
-
-/**
- *
- * @author Alex
- */
 public class HiloParImpar extends Thread
 {
     private int tipo;
