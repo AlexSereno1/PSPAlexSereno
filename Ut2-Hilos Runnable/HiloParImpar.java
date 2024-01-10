@@ -1,4 +1,3 @@
-
 public class HiloParImpar implements Runnable
 {
     private int tipo;
