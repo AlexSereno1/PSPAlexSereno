@@ -1,28 +1,21 @@
 
-package Ejercicio2;
-
-/**
- *
- * @author Clase
- */
-public class HiloSumasRestas extends Thread
+public class HiloSumasRestas implements Runnable
 {
     private int numvec;
     private String operacion;
     private int numero = 1000;
     
-    public HiloSumasRestas(String nombre,int numvec,String operacion)
+    public HiloSumasRestas(int numvec,String operacion)
     {
-        super(nombre);
         this.numvec = numvec;
         this.operacion = operacion;
     }
     //---------------------------------
     public void run ()
     {
-        if(operacion == "+")
+        if(operacion.equals("+"))
             incrementar();
-        else if(operacion == "-")
+        else if(operacion.equals("-"))
             decrementar();
         else
             System.out.println("Error al introducir la operación");
@@ -31,13 +24,13 @@ public class HiloSumasRestas extends Thread
     public void incrementar()
     {
         numero += numvec;
-        System.out.println("El numero del "+ getName()+" es: "+numero);
+        System.out.println("El numero del hilo con id "+Thread.currentThread().getId() +" es: "+numero);
     }
     //-----------------------------------
     public void decrementar()
     {
         numero -= numvec;
-        System.out.println("El numero del "+ getName()+" es: "+numero);
+        System.out.println("El numero del hilo con id "+ Thread.currentThread().getId()+" es: "+numero);
     }
    
 }
