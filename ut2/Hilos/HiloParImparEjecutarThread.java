@@ -1,6 +1,5 @@
 public class HiloParImparEjecutar 
 {
-    
     public static void main(String[] args) 
     {
         HiloParImpar h1 = new HiloParImpar("Hilo 1", 2);
